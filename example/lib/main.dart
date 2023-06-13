@@ -42,15 +42,32 @@ class _MyHomePageState extends State<MyHomePage> {
     TabItem(
       Icons.home,
       "Home",
-      Colors.blue,
+      LinearGradient(
+        colors: [
+          Color(0xff06081B),
+          Color(0xff4B3675),
+        ],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        stops: [1.0, 0.5],
+      ),
       labelStyle: TextStyle(
         fontWeight: FontWeight.normal,
       ),
+      // circleStrokeColor: Colors.transparent
     ),
     TabItem(
       Icons.search,
       "Search",
-      Colors.orange,
+      LinearGradient(
+        colors: [
+          Color(0xff06081B),
+          Color(0xff4B3675),
+        ],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        stops: [1.0, 0.5],
+      ),
       labelStyle: TextStyle(
         color: Colors.red,
         fontWeight: FontWeight.bold,
@@ -59,13 +76,29 @@ class _MyHomePageState extends State<MyHomePage> {
     TabItem(
       Icons.layers,
       "Reports",
-      Colors.red,
+      LinearGradient(
+        colors: [
+          Color(0xff06081B),
+          Color(0xff4B3675),
+        ],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        stops: [1.0, 0.5],
+      ),
       circleStrokeColor: Colors.black,
     ),
     TabItem(
       Icons.notifications,
       "Notifications",
-      Colors.cyan,
+      LinearGradient(
+        colors: [
+          Color(0xff06081B),
+          Color(0xff4B3675),
+        ],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        stops: [1.0, 0.5],
+      ),
     ),
   ]);
 
@@ -93,7 +126,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget bodyContainer() {
-    Color? selectedColor = tabItems[selectedPos].circleColor;
+    // Color? selectedColor = tabItems[selectedPos].circleColor;
+    Color? selectedColor = Colors.blue;
+
     String slogan;
     switch (selectedPos) {
       case 0:
@@ -142,22 +177,27 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget bottomNav() {
     return CircularBottomNavigation(
       tabItems,
+
       controller: _navigationController,
       selectedPos: selectedPos,
-      barHeight: bottomNavBarHeight,
+      circleSize: 64,
+      iconsSize: 20,
+
+      barHeight: 74,
       // use either barBackgroundColor or barBackgroundGradient to have a gradient on bar background
-      barBackgroundColor: Colors.white,
-      // barBackgroundGradient: LinearGradient(
-      //   begin: Alignment.bottomCenter,
-      //   end: Alignment.topCenter,
-      //   colors: [
-      //     Colors.blue,
-      //     Colors.red,
-      //   ],
-      // ),
-      backgroundBoxShadow: <BoxShadow>[
-        BoxShadow(color: Colors.black45, blurRadius: 10.0),
-      ],
+      // barBackgroundColor: Colors.white,
+      barBackgroundGradient: LinearGradient(
+        colors: [
+          Color(0xff06081B),
+          Color(0xff4B3675),
+        ],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        stops: [1.0, 1.0],
+      ),
+      // backgroundBoxShadow: <BoxShadow>[
+      //   BoxShadow(color: Colors.black45, blurRadius: 10.0),
+      // ],
       animationDuration: Duration(milliseconds: 300),
       selectedCallback: (int? selectedPos) {
         setState(() {

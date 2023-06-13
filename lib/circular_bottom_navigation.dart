@@ -197,9 +197,8 @@ class _CircularBottomNavigationState extends State<CircularBottomNavigation>
                           topLeft: Radius.circular(widget.circleSize / 2),
                           topRight: Radius.circular(widget.circleSize / 2),
                         ),
-                        color:
-                            widget.tabItems[selectedPos!].circleStrokeColor ??
-                                widget.barBackgroundColor,
+                        gradient:
+                            widget.tabItems[selectedPos!].circleColor,
                         boxShadow: widget.backgroundBoxShadow,
                       ),
                     ),
@@ -212,9 +211,8 @@ class _CircularBottomNavigationState extends State<CircularBottomNavigation>
                           bottomLeft: Radius.circular(widget.circleSize / 2),
                           bottomRight: Radius.circular(widget.circleSize / 2),
                         ),
-                        color:
-                            widget.tabItems[selectedPos!].circleStrokeColor ??
-                                widget.barBackgroundColor,
+                        gradient:
+                            widget.tabItems[selectedPos!].circleColor
                       ),
                     ),
                   ),
@@ -224,7 +222,7 @@ class _CircularBottomNavigationState extends State<CircularBottomNavigation>
                 margin: EdgeInsets.all(widget.circleStrokeWidth),
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: widget.tabItems[selectedPos!].circleColor),
+                    gradient: widget.tabItems[selectedPos!].circleColor),
               ),
             ],
           ),

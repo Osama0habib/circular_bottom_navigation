@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class TabItem {
   IconData icon;
   String title;
-  Color circleColor;
+  // Color circleColor;
+  Gradient circleColor;
   Color? circleStrokeColor;
   TextStyle labelStyle;
 
