@@ -15,6 +15,7 @@ class CircularBottomNavigation extends StatefulWidget {
   final Color? barBackgroundColor;
   final Gradient? barBackgroundGradient;
   final double circleSize;
+  final BorderRadiusGeometry borderRadius;
   final double circleStrokeWidth;
   final double iconsSize;
   final Color selectedIconColor;
@@ -43,7 +44,7 @@ class CircularBottomNavigation extends StatefulWidget {
     this.selectedCallback,
     this.controller,
     this.allowSelectedIconCallback = false,
-    backgroundBoxShadow,
+    backgroundBoxShadow, this.borderRadius = BorderRadius.zero,
   })  : backgroundBoxShadow = backgroundBoxShadow ??
             [BoxShadow(color: Colors.grey, blurRadius: 2.0)],
         barBackgroundColor =
@@ -170,6 +171,7 @@ class _CircularBottomNavigationState extends State<CircularBottomNavigation>
             color: widget.barBackgroundColor,
             gradient: widget.barBackgroundGradient,
             boxShadow: widget.backgroundBoxShadow,
+            borderRadius: widget.borderRadius,
           ),
         ),
         top: fullHeight - widget.barHeight,
